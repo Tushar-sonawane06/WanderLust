@@ -145,12 +145,6 @@ WanderLust is deployed on **Render** for production-ready hosting.
 
 ---
 
-## 📁 Folder Structure
-
-*(You said not to include it, so omitted. Let me know if you want it!)*
-
----
-
 ## 📝 Environment Variables
 
 | Variable                | Description                  |
@@ -159,12 +153,6 @@ WanderLust is deployed on **Render** for production-ready hosting.
 | `CLOUDINARY_CLOUD_NAME` | Cloudinary Cloud Name        |
 | `CLOUDINARY_KEY`        | Cloudinary API Key           |
 | `MONGO_URL`             | MongoDB Atlas Connection URI |
-
----
-
-## 🤝 Contributing
-
-Feel free to fork the project and open pull requests.
 
 ---
 
