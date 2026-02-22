@@ -17,6 +17,7 @@ const listingSchema = new Schema({
     price:Number,
     location:String,
     country:String,
+    hotelType:String,
     reviews: [ 
       {
         type: Schema.Types.ObjectId,

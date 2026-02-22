@@ -19,10 +19,10 @@
             <input name="listing[image]" type="file" class="form-control">
         </div>
         <div class="row">
-            <div class="mb-3 col-4">
-                <label for="price" class="form-label">Price</label>
-                <input name="listing[price]" placeholder="1700" type="number" class="form-control" required>
-                <div class="invalid-feedback">Please Enter Valid Price!</div>
+            <div class="mb-3 col-6">
+                <label for="location" class="form-label">Location</label>
+                <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control" required>
+                <div class="invalid-feedback">Please Enter Location!</div>
             </div>
             <div class="mb-3 col-md -8">
                 <label for="country" class="form-label">Country</label>
@@ -30,10 +30,29 @@
                 <div class="invalid-feedback">Please Enter Country Name!</div>
             </div>
         </div>
-        <div lass="mb-3">
-            <label for="location" class="form-label">Location</label>
-            <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control" required>
-            <div class="invalid-feedback">Please Enter Location!</div>
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label for="price" class="form-label">Price</label>
+                <input name="listing[price]" placeholder="1700" type="number" class="form-control" required>
+                <div class="invalid-feedback">Please Enter Valid Price!</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="hotel_type" class="form-label">Hotel Type</label>
+                <select name="listing[hotelType]" class="form-control" required>
+                    <option value="">Select Hotel Type</option>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Iconic Cities">Iconic Cities</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Castles">Castles</option>
+                    <option value="Pools">Pools</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Farms">Farms</option>
+                    <option value="Artic">Artic</option>
+                    <option value="Domes">Domes</option>
+                    <option value="Boats">Boats</option>
+                </select>
+                <div class="invalid-feedback">Please select the Type</div>
+            </div>
         </div>
         <br/><br/>
         <button class="btn btn-dark add-btn mt-3">Add</button>

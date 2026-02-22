@@ -5,7 +5,29 @@ const { geocoding } = require("@maptiler/client");
 
 
 module.exports.index = async (req,res)=>{
-    const alllistings = await Listing.find({});
+    const { hotelType, search } = req.query;
+
+    let query = {};
+    
+    if (hotelType) {
+        query.hotelType = hotelType;
+    }
+    
+    if (search) {
+        query.$or = [
+            { location: { $regex: search, $options: "i" } },
+            { country: { $regex: search, $options: "i" } },
+            { title: { $regex: search, $options: "i" } }
+        ];
+    }
+    
+    let alllistings = await Listing.find(query);
+    
+    if (alllistings.length === 0) {
+        req.flash("error", "No Listings Found!");
+        return res.redirect("/listings");
+    }
+    
     res.render("./listings/index.ejs",{alllistings});
 };
 

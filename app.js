@@ -88,6 +88,6 @@ app.use((req, res, next) => {
 
 app.use((err,req,res,next)=>{
     let {statuscode=500, message="Something Went Wrong"} = err;
-    return res.status(statuscode).send("listings/error.ejs", {err});
+    return res.status(statuscode).send(message);
 });
 
