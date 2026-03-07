@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate.ejs") %> 
+<section class="hero">
+    <div class="grid-bg"></div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Discover Your Perfect Stay</h1>
+            <p>Find the best hotels and destinations around the world</p>
+
+            <a href="/listings" class="explore-btn">
+                Explore Hotels
+            </a>
+        </div>
+
+        <div class="hero-images">
+            <img src="/images/image.png" alt="hotel" class="card card1">
+            <img src="/images/image2.png" alt="hotel" class="card card2">
+            <img src="/images/image3.jpg" alt="hotel" class="card card3">
+        </div>
+    </div>
+</section>
+
+<section id="main-content">  
+    <div id="main-content-hotels">
+
+        <% for (let city in listingsByCity) { %>
+
+            <div class="hotel">
+            
+              <div class="hotel-heading">
+                <h4><b>Hotels in <%= city %></b></h4>
+              </div>
+            
+              <div class="hotel-list">
+            
+                <% listingsByCity[city].forEach(listing => { %>
+            
+                    <a>
+                        <div class="hotel-content">
+            
+                        <div class="hotel-img">
+                            <img src="<%= listing.image.url %>" alt="hotel image">
+                        </div>
+            
+                        <div class="hotel-description">
+                            <h6><%= listing.title %></h6>
+                            <p>₹<%= listing.price.toLocaleString("en-IN") %> <span> /night</span></p>
+                        </div>
+            
+                        </div>
+                    </a>
+
+                <% }) %>
+
+                <a class="see-all-card">
+                    <div class="stack-images">
+
+                        <img src="/images/image.png" class="stack-img img1">
+                        <img src="/images/image2.png" class="stack-img img2">
+                        <img src="/images/image3.jpg" class="stack-img img3">
+        
+                    </div>
+        
+                    <p class="see-all-text">See all</p>
+                </a>
+
+              </div>
+            
+            </div>
+            
+            <% } %>
+    </div>
+</section>

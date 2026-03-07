@@ -1,0 +1,300 @@
+body{
+    margin:0 !important;
+    padding:0 !important;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero{
+    width:100vw;
+    height:100vh;
+    margin-left:calc(-50vw + 50%);
+    background:#0f0f0f;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    pointer-events: none;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 8%;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    color:#aaa;
+}
+
+.hero-content a,
+.hero-content button{
+    pointer-events: auto;
+}
+
+.btn{
+    margin-top:20px;
+    padding:12px 30px;
+    background:#ff385c;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    display:inline-block;
+}
+
+.grid-bg{
+    top:0;
+    left:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns:repeat(20,1fr);
+    grid-template-rows:repeat(12,1fr);
+    z-index:1;
+}
+
+.grid-box{
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.3s;
+}
+
+.grid-box:hover{
+    background:#1f1b1e;
+}
+
+.btn{
+    color:white;
+    background-color: red;
+    border-radius: 25%;
+}
+
+.hero-text{
+    color:white;
+    max-width:500px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.explore-btn{
+    padding:14px 32px;
+    background:#ff385c;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.hero-images{
+    pointer-events:none;
+}
+
+.hero-images{
+    pointer-events:none;
+}
+
+.hero-image img{
+    width:420px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+
+.hero-images{
+    position: relative;
+    width: 600px;
+    height: 500px;
+}
+
+.hero-images img{
+    position:absolute;
+    width:360px;
+    border-radius:15px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.card1{
+    top:-10;
+    right:0;
+}
+
+.card2{
+    top:160px;
+    right:220px;
+    width:420px;
+}
+
+.card3{
+    top:320px;
+    right:0;
+}
+
+.hero-images img{
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-12px);}
+    100%{transform: translateY(0);}
+}
+
+.hero-images img{
+    transition:transform 0.3s ease;
+}
+
+.hero-images img:hover{
+    transform:scale(1.05);
+}
+
+#main-content{
+    width:100vw;
+    margin-left:calc(-50vw + 50%) !important;
+}
+
+.hotel-heading{
+    display:flex;
+    padding-left:23px;
+    padding-top: 20px;
+}
+
+
+.hotel-content{
+    height:235px;
+    width:203px;
+    border-radius: 15px;
+    position:relative;
+    z-index:5;
+}
+
+.hotel-list{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    padding-left:23px;
+}
+
+.hotel-img img{
+    height:188px;
+    width:100%;
+    border-radius: 15px;
+    object-fit:cover;
+}
+
+
+.hotel-description{
+    padding-left:8px;
+}
+
+.hotel-description h6{
+    margin-bottom:0px;
+    color:black;
+}
+
+.hotel-description p{
+    font-weight:600;
+    color:black;
+}
+
+.hotel-description span{
+    font-weight:500;
+}
+
+.hotel-content:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+
+.see-all-card{
+    width:220px;
+    height:188px;
+
+    background:#f3f3f3;
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:black;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+.stack-images{
+    position:relative;
+    width:120px;
+    height:80px;
+    margin-bottom:15px;
+}
+
+.stack-img{
+    position:absolute;
+    width:70px;
+    height:50px;
+    object-fit:cover;
+
+    border-radius:10px;
+    border:3px solid white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.img1{
+    left:0;
+    top:15px;
+    transform:rotate(-12deg);
+}
+
+.img2{
+    left:25px;
+    top:0;
+    transform:rotate(0deg);
+}
+
+.img3{
+    left:50px;
+    top:15px;
+    transform:rotate(12deg);
+}
+
+.see-all-text{
+    font-size:16px;
+    font-weight:600;
+}
+
+.see-all-card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
