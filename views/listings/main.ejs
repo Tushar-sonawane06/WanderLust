@@ -34,7 +34,7 @@
             
                 <% listingsByCity[city].forEach(listing => { %>
             
-                    <a>
+                    <a href="/listings/<%= listing._id %>">
                         <div class="hotel-content">
             
                         <div class="hotel-img">
@@ -51,7 +51,7 @@
 
                 <% }) %>
 
-                <a class="see-all-card">
+                <a class="see-all-card" href="/listings?search=<%=city%>">
                     <div class="stack-images">
 
                         <img src="/images/image.png" class="stack-img img1">
