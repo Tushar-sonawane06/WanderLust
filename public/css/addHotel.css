@@ -11,8 +11,6 @@ body{
     justify-content: center;
     align-items: center;
 
-    background-image:url("/images/newAir.jpg");
-
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;

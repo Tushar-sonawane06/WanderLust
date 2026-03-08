@@ -1,24 +1,46 @@
 <% layout("/layouts/boilerplate.ejs") %>
+<style>
+    .add-listing-page{
+        background-image:url("/images/signup.avif");
+    }
+</style>
+<div class="add-listing-page">
 
-<div class="row mt-3">
-    <h1 class="col-6 offset-3" >SignUp for WanderLust</h1>
-    <div class="col-6 offset-3"> 
+    <div class="form-container">
+
+        <h2 class="form-title">Create Your Account</h2>
+        <p class="form-subtitle">Join WanderLust and start exploring amazing stays.</p>
+
         <form action="/signup" method="POST" class="needs-validation" novalidate>
+
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
+                <label class="form-label">Username</label>
                 <input name="username" id="username" type="text" class="form-control" required>
                 <div class="valid-feedback">Looks Good!</div>
             </div>
+
             <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input name="email" id="email" type="text" class="form-control" required>
+                <label class="form-label">E-mail</label>
+                <input name="email" id="email" type="email" class="form-control" required>
             </div>
-            <div class="mb-3">
+
+            <div class="mb-3 position-relative">
                 <label for="password" class="form-label">Password</label>
+            
                 <input name="password" id="password" type="password" class="form-control" required>
+                <i class="fa-solid fa-eye password-toggle"></i>
                 <div class="valid-feedback">Looks Good!</div>
             </div>
-            <button class="btn btn-success">SignUp</button>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn add-btn mt-3">Sign Up</button>
+            </div>
+            <p class="text-center mt-3">
+                Already have an account? <a href="/login">Log in</a>
+            </p>
+            
         </form>
+
     </div>
+
 </div>
