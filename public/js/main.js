@@ -14,3 +14,14 @@ for(let i = 0; i < 240; i++){
 
     grid.appendChild(box);
 }
+
+//filter for the all listings page:-
+const filters = document.querySelectorAll(".filter");
+
+filters.forEach(filter => {
+
+    if(filter.href === window.location.href){
+        filter.classList.add("active");
+    }
+
+});

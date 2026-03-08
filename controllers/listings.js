@@ -8,11 +8,11 @@ module.exports.index = async (req,res)=>{
     const { hotelType, search } = req.query;
 
     let query = {};
-    
+
     if (hotelType) {
         query.hotelType = hotelType;
     }
-    
+
     if (search) {
         query.$or = [
             { location: { $regex: search, $options: "i" } },
@@ -20,15 +20,25 @@ module.exports.index = async (req,res)=>{
             { title: { $regex: search, $options: "i" } }
         ];
     }
-    
-    let alllistings = await Listing.find(query);
-    
-    if (alllistings.length === 0) {
-        req.flash("error", "No Listings Found!");
-        return res.redirect("/listings");
-    }
-    
-    res.render("./listings/index.ejs",{alllistings});
+
+    let page = parseInt(req.query.page) || 1;
+    let limit = 12;
+
+    let totalListings = await Listing.countDocuments(query);
+
+    let listings = await Listing.find(query)
+        .skip((page - 1) * limit)
+        .limit(limit);
+
+    let totalPages = Math.ceil(totalListings / limit);
+
+    res.render("./listings/index.ejs", {
+        listings,
+        page,
+        totalPages,
+        hotelType,
+        search
+    });
 };
 
 module.exports.renderNewForm = async (req,res)=>{

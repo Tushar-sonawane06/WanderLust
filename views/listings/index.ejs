@@ -1,134 +1,121 @@
 <% layout("/layouts/boilerplate.ejs") %> 
 <body>
-    <style>
-        #filters{
-            display:flex;
-            flex-wrap:wrap;
-            align-items:center;
-            margin-left: 1rem;
-        }
-        .filter{
-            text-align:center;
-            margin-right:1.5rem;
-            margin-top:2rem;
-            opacity:0.7;
-        }
-        .filter:hover{
-            opacity:1;
-            cursor:pointer;
-        }
-        .filter p{
-            font-size:0.8rem;
-
-        }
-        .tax-info{
-            display:none;
-        }
-        .tax-toggle{
-            border: 1px solid black;
-            border-radius:1rem;
-            height:3.5rem;
-            padding:1rem;
-            margin-left: 2rem;
-            display:flex;
-            align-items:center;
-        }
-    </style>
+<div id="filters-wrapper">
 
     <div id="filters">
-        <div class="filter">
-            <a href="/listings?hotelType=Trending">
-                <div class="icon"><i class="fa-solid fa-fire"></i></div>
-                <p class="icon">Trending</p>
+    
+            <a class="filter" href="/listings?hotelType=Trending">
+                <i class="fa-solid fa-fire"></i>
+                <span>Trending</span>
             </a>
-        </div>
-        <div class="filter" >
-            <a href="/listings?hotelType=Rooms" >
-                <div class="icon"><i class="fa-solid fa-bed"></i></div>
-                <p class="icon">Rooms</p>
+    
+            <a class="filter" href="/listings?hotelType=Rooms">
+                <i class="fa-solid fa-bed"></i>
+                <span>Rooms</span>
             </a>
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Iconic Cities">
-                <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
-                <p class="icon">Iconic Cities</p>
+    
+            <a class="filter" href="/listings?hotelType=Iconic Cities">
+                <i class="fa-solid fa-mountain-city"></i>
+                <span>Iconic Cities</span>
             </a>
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Mountains">
-                <div class="icon"><i class="fa-solid fa-mountain"></i></div>
-                <p class="icon">Mountains</p>
+    
+            <a class="filter" href="/listings?hotelType=Mountains">
+                <i class="fa-solid fa-mountain"></i>
+                <span>Mountains</span>
             </a>
-
-        </div>
-        <div class="filter" >
-            <a href="/listings?hotelType=Castles">
-                <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
-                <p class="icon">Castles</p>
+    
+            <a class="filter" href="/listings?hotelType=Castles">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <span>Castles</span>
             </a>
-
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Pools">
-                <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
-                <p class="icon">Amazing Pools</p>
+    
+            <a class="filter" href="/listings?hotelType=Pools">
+                <i class="fa-solid fa-water-ladder"></i>
+                <span>Amazing Pools</span>
             </a>
-
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Camping">
-                <div class="icon"><i class="fa-solid fa-campground"></i></div>
-                <p class="icon">Camping</p>
+    
+            <a class="filter" href="/listings?hotelType=Camping">
+                <i class="fa-solid fa-campground"></i>
+                <span>Camping</span>
             </a>
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Farms">
-                <div class="icon"><i class="fa-solid fa-tractor"></i></div>
-                <p class="icon">Farms</p>
+    
+            <a class="filter" href="/listings?hotelType=Farms">
+                <i class="fa-solid fa-tractor"></i>
+                <span>Farms</span>
             </a>
-        </div>
-        <div class="filter">
-            <a  href="/listings?hotelType=Arctic">
-                <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
-                <p class="icon">Arctic</p>
-            </a>            
-        </div >
-        <div class="filter">
-            <a href="/listings?hotelType=Beaches">
-                <div class="icon"><i class="fa-solid fa-landmark-dome"></i></div>
-                <p class="icon">Beaches</p>
+    
+            <a class="filter" href="/listings?hotelType=Arctic">
+                <i class="fa-solid fa-snowflake"></i>
+                <span>Arctic</span>
             </a>
-        </div>
-        <div class="filter">
-            <a href="/listings?hotelType=Boats">
-                <div class="icon"><i class="fa-solid fa-ship"></i></div>
-                <p class="icon">Boats</p>
+    
+            <a class="filter" href="/listings?hotelType=Beaches">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <span>Beaches</span>
             </a>
-        </div>
-        <div class="tax-toggle">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                <label class="form-check-label" for="switchCheckDefault">Display Total After Taxes</label>
-              </div>
-        </div>
+    
+            <a class="filter" href="/listings?hotelType=Boats">
+                <i class="fa-solid fa-ship"></i>
+                <span>Boats</span>
+            </a>
+    
+    </div>
+    
+    
+    <div class="tax-toggle">
+            <i class="fa-solid fa-receipt"></i>
+    
+            <label class="switch">
+                <input type="checkbox" id="switchCheckDefault">
+                <span class="slider"></span>
+            </label>
+    
+            <span class="tax-text">Total Price (Incl. Taxes)</span>
+    </div>
+    
     </div>
     <div class="row row-cols-lg-3 row-cols-md-2 mt-3 row-cols-sm-1">
-        <% for(let listing of alllistings){ %>
+        <% for(let listing of listings){ %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
             <div class="listing-card card col"> 
                 <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height:20rem">
                 <div class="card-img-overlay"></div>
                 <div class="card-body">
-                    <p class="card-text">
-                    <b><%= listing.title %></b> 
-                    <p class="price" data-price="<%=listing.price%>">&#8377; <%= listing.price.toLocaleString("en-IN") %> /night</p>
+                    <p class="card-title"><b><%= listing.title %></b></p>
+                    <p class="card-location"><%= listing.location %></p>
+                    <p class="price" data-price="<%= listing.price %>">
+                        &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
                     </p>
                 </div>
             </div>
             </a>
         <% } %>
     </div>
-
+    <p class="results-count">
+        Showing page <%= page %> of <%= totalPages %>
+    </p>
+    <div class="pagination">
+    
+        <% if(page > 1){ %>
+            <a href="/listings?page=<%= page - 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+               class="page-btn">Previous</a>
+        <% } %>
+    
+        <% for(let i = 1; i <= totalPages; i++){ %>
+    
+            <a href="/listings?page=<%= i %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+               class="page-number <%= i === page ? 'active' : '' %>">
+               <%= i %>
+            </a>
+    
+        <% } %>
+    
+        <% if(page < totalPages){ %>
+            <a href="/listings?page=<%= page + 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+               class="page-btn">Next</a>
+        <% } %>
+    
+    </div>
 </body>
 
 <script>
