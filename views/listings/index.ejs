@@ -74,47 +74,49 @@
     </div>
     
     </div>
-    <div class="row row-cols-lg-3 row-cols-md-2 mt-3 row-cols-sm-1">
-        <% for(let listing of listings){ %>
-            <a href="/listings/<%= listing._id %>" class="listing-link">
-            <div class="listing-card card col"> 
-                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height:20rem">
-                <div class="card-img-overlay"></div>
-                <div class="card-body">
-                    <p class="card-title"><b><%= listing.title %></b></p>
-                    <p class="card-location"><%= listing.location %></p>
-                    <p class="price" data-price="<%= listing.price %>">
-                        &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
-                    </p>
+    <div class="card-wrapper">
+        <div class="row row-cols-lg-3 row-cols-md-2 mt-3 row-cols-sm-1 card-wrapper">
+            <% for(let listing of listings){ %>
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="listing-card card col"> 
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height:20rem">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-title"><b><%= listing.title %></b></p>
+                        <p class="card-location"><%= listing.location %></p>
+                        <p class="price" data-price="<%= listing.price %>">
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
+                        </p>
+                    </div>
                 </div>
-            </div>
-            </a>
-        <% } %>
-    </div>
-    <p class="results-count">
-        Showing page <%= page %> of <%= totalPages %>
-    </p>
-    <div class="pagination">
+                </a>
+            <% } %>
+        </div>
+        <p class="results-count">
+            Showing page <%= page %> of <%= totalPages %>
+        </p>
+        <div class="pagination">
     
-        <% if(page > 1){ %>
-            <a href="/listings?page=<%= page - 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
-               class="page-btn">Previous</a>
-        <% } %>
+            <% if(page > 1){ %>
+                <a href="/listings?page=<%= page - 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+                class="page-btn">Previous</a>
+            <% } %>
     
-        <% for(let i = 1; i <= totalPages; i++){ %>
+            <% for(let i = 1; i <= totalPages; i++){ %>
     
-            <a href="/listings?page=<%= i %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
-               class="page-number <%= i === page ? 'active' : '' %>">
-               <%= i %>
-            </a>
+                <a href="/listings?page=<%= i %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+                class="page-number <%= i === page ? 'active' : '' %>">
+                <%= i %>
+                </a>
     
-        <% } %>
+            <% } %>
     
-        <% if(page < totalPages){ %>
-            <a href="/listings?page=<%= page + 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
-               class="page-btn">Next</a>
-        <% } %>
+            <% if(page < totalPages){ %>
+                <a href="/listings?page=<%= page + 1 %>&hotelType=<%= hotelType || '' %>&search=<%= search || '' %>" 
+                 class="page-btn">Next</a>
+            <% } %>
     
+        </div>
     </div>
 </body>
 
