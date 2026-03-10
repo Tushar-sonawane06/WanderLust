@@ -2,60 +2,190 @@
 <script>
     const mapApi = "<%= process.env.MAP_API %>";
     const listing = <%- JSON.stringify(listing)%>;
+
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    const mainImage = document.getElementById("mainImage");
+
+    thumbnails.forEach(img=>{
+        img.addEventListener("click",()=>{
+            mainImage.src = img.src;
+        });
+});
 </script>
+<div class="gap">
 <div class="row mt-3">
-    <div class="col-8 offset-3">
-        <h3><%= listing.title%></h3>
-    </div>
+        <div class="listing-gallery container-fluid">
 
-
-    <div class="card listing-card col-6 offset-3 show-card">
-        <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
-        <div class="card-body">
-            <p class="card-text">
-                <i>Owned by <%=listing.owner.username%></i><br>
-            </p>
-            <p class="card-text">
-                <%= listing.description %> <br>
-            </p>
-            <p class="card-text">
-                &#8377; <%= listing.price.toLocaleString("en-IN") %> /night<br>
-            </p>
-            <p class="card-text">
-                <%= listing.location %> <br>
-            </p>
-            <p class="card-text">
-                <%= listing.country %> <br>
-            </p>
-            <p class="card-text">
-                <%= listing.title %><br>
-            </p>
+            <% if(listing.images && listing.images.length > 0){ %>
+                <div class="main-image">
+                    <img id="mainImage" src="<%= listing.images[0].url %>" alt="Listing Image">
+                </div>
+            <% } %>
+        
+            <% if(listing.images && listing.images.length > 1){ %>
+                <div class="thumbnail-container">
+                    <% listing.images.slice(1,5).forEach((img)=>{ %>
+                        <img src="<%= img.url %>" class="thumbnail">
+                    <% }) %>
+                </div>
+            <% } %>
+        
         </div>
-    </div>
+        
 
-    <br />
-    <%if(currentUser && listing.owner._id.equals(currentUser._id)){%>
-    <div class="btns">
-        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3">Edit</a>
-        <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-            <button class="btn btn-dark offset-5 ">Delete</button>
-        </form>
-    </div>
-    <%}%>
+        <div class="listing-layout">
+
+            <div class="listing-left">
+        
+                <div class="hotel-header container">
+                    <h2 class="hotel-title"><%= listing.title %></h2>
+                    <span class="hotel-price">
+                        ₹ <%= listing.price.toLocaleString("en-IN") %> / night
+                    </span>
+                </div>
+        
+                <p class="hotel-location container">
+                    <%= listing.location %>, <%= listing.country %>
+                </p>
+        
+                <p class="hotel-description">
+                    <%= listing.description %>
+                </p>
+        
+            </div>
+        <div class="divideDiv">
+            <% if(listing.amenities && listing.amenities.length > 0){ %>
+
+                <div class="amenities-section">
+                
+                    <h4 class="amenities-title d-flex justify-content-center">Amenities</h4>
+                
+                    <div class="amenities-container">
+                
+                        <% listing.amenities.forEach((amenity)=>{ %>
+                
+                            <div class="amenity-item">
+                
+                                <% if(amenity === "Wifi"){ %>
+                                    <i class="fa-solid fa-wifi"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Parking"){ %>
+                                    <i class="fa-solid fa-square-parking"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Pool"){ %>
+                                    <i class="fa-solid fa-water-ladder"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Air Conditioning"){ %>
+                                    <i class="fa-solid fa-snowflake"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Kitchen"){ %>
+                                    <i class="fa-solid fa-utensils"></i>
+                                <% } %>
+                
+                                <% if(amenity === "TV"){ %>
+                                    <i class="fa-solid fa-tv"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Gym"){ %>
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                <% } %>
+                
+                                <% if(amenity === "Pet Friendly"){ %>
+                                    <i class="fa-solid fa-paw"></i>
+                                <% } %>
+                
+                                <span><%= amenity %></span>
+                
+                            </div>
+                
+                        <% }) %>
+                
+                    </div>
+                
+                </div>
+                
+                <% } %>
+            
+            <div class="listing-right">
+                
+                <div class="owner-card">
+                    <div class="owner-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+        
+                    <div class="owner-info">
+                        <p class="hosted-by">Hosted by</p>
+                        <h6><%= listing.owner.username %></h6>
+                    </div>
+        
+                </div>
+            </div>
+            </div>
+                <%if(currentUser && listing.owner._id.equals(currentUser._id)){%>
+        
+                <div class="owner-actions d-flex justify-content-center">
+        
+                    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark action-btn">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </a>
+        
+                    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                        <button class="btn btn-danger action-btn">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </form>
+        
+                </div>
+        
+                <% } %>
+                
+        </div>
+
+        <div class="booking">
+            <div class="booking-card">
+
+                <h4 class="booking-price">
+                    ₹ <%= listing.price.toLocaleString("en-IN") %>
+                    <span>/ night</span>
+                </h4>
+
+                <div class="booking-inputs">
+
+                    <div class="booking-field">
+                        <label>Check-in</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="booking-field">
+                        <label>Check-out</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                </div>
+
+                <button class="btn booking-btn">
+                    Reserve
+                </button>
+
+            </div>
+        </div>
 
 
-    <div class="col-8 offset-3 mb-3">
+
+    <div class="reviews">
         <%if(currentUser){%>
         <hr/>
-        <h4>Leave A Review</h4>
+        <div class="review-card">
+        <h4 class="d-flex justify-content-center">Leave A Review</h4>
         <form method="POST" action="/listings/<%= listing._id %>/reviews" novalidate class="needs-validation">
-            <!-- <div class="mb-3 mt-3">
-                <label for="rating" class="form-label">Rating</label>
-                <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range"> 
-            </div> -->
             <div class="mb-3 mt-3">
-                <label for="rating" class="form-label">Rating</label>
-            <fieldset class="starability-slot">
+                <label for="rating" class="form-label d-flex justify-content-center">Rating</label>
+                <div class="d-flex justify-content-center">
+                <fieldset class="starability-slot">
                 <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                 <label for="first-rate1" title="Terrible">1 star</label>
@@ -68,24 +198,35 @@
                 <input type="radio" id="first-rate5" name="review[rating]" value="5" />
                 <label for="first-rate5" title="Amazing">5 stars</label>
               </fieldset>
+              </div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="comment" class="form-label">Comments</label>
                 <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
                 <div class="invalid-feedback"> Please add some comments for review</div>
             </div>
-            <button class="btn btn-outline-dark">Submit</button>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-outline-dark">Submit</button>
+            </div>
         </form>
+        </div>
         <%}%>
         <hr />
-
+    </div>
+    <div class="col-8 offset-3 mb-3">
         <% if(listing.reviews.length >0){%>
-        <p><b>All Reviews</b></p>
+        <h4 class="review-heading"><b>All Reviews</b></h4>
         <div class="row ">
         <% for(review of listing.reviews){%>
             <div class="card col-5 ms-3 mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">@<%= review.author.username %></h5>
+                    <div class="review-user">
+                        <div class="review-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    
+                        <h5 class="card-title"><%= review.author.username %></h5>
+                    </div>
                     <p class="starability-result card-text" data-rating=<%= review.rating%>>Rated: 3 stars</p>
                     <p class="card-text"><%= review.comment %></p>
                 </div>
@@ -97,11 +238,13 @@
         </div>
         <%}%>
     </div>
+    <hr>
     <div class="col-6 offset-3 mb-3">
-        <h3>Where you'll be</h3>
+        <h3 class="text-center">Where you'll be</h3>
         <div id="map"></div>
     </div>
 </div>
 
+</div>
 
 <script src="/WanderLust/public/js/map.js"></script>

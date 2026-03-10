@@ -9,11 +9,12 @@ const listingSchema = new Schema({
         required:true
     },
     description:String,
-    image: {
+    images: [{
       url: {
         type: String,
         required: true
-    }},
+    }}],
+    amenities: [String],
     price:Number,
     location:String,
     country:String,

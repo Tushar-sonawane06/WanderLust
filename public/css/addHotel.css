@@ -2,7 +2,11 @@ body{
     margin:0 !important;
     padding:0 !important;
 }
-
+.amenities{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 .add-listing-page{
     min-height: 100vh;
     width: 100%;

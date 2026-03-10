@@ -38,7 +38,9 @@
                         <div class="hotel-content">
             
                         <div class="hotel-img">
-                            <img src="<%= listing.image.url %>" alt="hotel image">
+                            <img src="<%= listing.images && listing.images.length 
+                            ? listing.images[0].url 
+                            : (listing.image ? listing.image.url : '') %>" alt="hotel image">
                         </div>
             
                         <div class="hotel-description">

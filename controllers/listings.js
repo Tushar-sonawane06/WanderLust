@@ -60,14 +60,16 @@ module.exports.createListing = async (req,res,next)=>{
     let place = req.body.listing.location;
     const link = `https://api.maptiler.com/geocoding/${place}.json?key=${process.env.MAP_API}`;
     const response = await fetch(link);
-    if (!response.ok) throw new Error(`API error: ${res.statusText}`);
-    const data = await response.json();
-    let url = req.file.path;
-    let fileName = req.file.fileName;
-    console.log(url, fileName);
+    if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+    const data = await response.json(); 
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id; 
-    newListing.image = {url: url, fileName: fileName};
+    if (req.files && req.files.length > 0) {
+        newListing.images = req.files.map((file) => ({
+            url: file.path,
+            filename: file.filename
+        }));
+    };
     newListing.geometry = data.features[0].geometry;
     const savelisting = await newListing.save();
     console.log(savelisting);
