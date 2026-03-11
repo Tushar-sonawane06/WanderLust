@@ -40,7 +40,8 @@
                 <div class="hotel-header container">
                     <h2 class="hotel-title"><%= listing.title %></h2>
                     <span class="hotel-price">
-                        ₹ <%= listing.price.toLocaleString("en-IN") %> / night
+                        ₹ <%= Math.round(listing.price * 1.18).toLocaleString("en-IN") %> / night
+                        <span class="text-muted">(incl. 18% GST)</span>
                     </span>
                 </div>
         
@@ -149,8 +150,9 @@
             <div class="booking-card">
 
                 <h4 class="booking-price">
-                    ₹ <%= listing.price.toLocaleString("en-IN") %>
+                    ₹ <%= Math.round(listing.price * 1.18).toLocaleString("en-IN") %>
                     <span>/ night</span>
+                    <span class="text-muted">(incl. 18% GST)</span>
                 </h4>
 
                 <div class="booking-inputs">
