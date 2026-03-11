@@ -19,6 +19,7 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const mainRouter = require("./routes/main.js");
+const pagesRouter = require("./routes/pages.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -81,6 +82,7 @@ app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
 app.use("/", mainRouter);
+app.use("/", pagesRouter);
 
 // middleware
 app.use((req, res, next) => {
