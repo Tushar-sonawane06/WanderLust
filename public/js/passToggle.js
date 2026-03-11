@@ -19,3 +19,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 });
+
+//theme toggle
+const toggle = document.getElementById("theme-toggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("theme-dark");
+    toggle.checked = true;
+}
+
+toggle.addEventListener("change", function () {
+
+    if (toggle.checked) {
+        document.body.classList.add("theme-dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("theme-dark");
+        localStorage.setItem("theme", "light");
+    }
+
+});
