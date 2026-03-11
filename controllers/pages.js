@@ -5,3 +5,7 @@ module.exports.renderContactUs = async (req,res)=>{
 module.exports.renderPrivacyPolicy = async (req,res)=>{
     res.render("pages/privacypolicy.ejs");
 }
+
+module.exports.renderTermsOfService = async (req,res)=>{
+    res.render("pages/termsofservice.ejs");
+}

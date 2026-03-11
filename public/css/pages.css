@@ -149,3 +149,72 @@
         padding: 20px;
     }
 }
+
+/* Terms of service PAGE */
+
+.terms-page{
+    padding: 50px 15px;
+}
+
+.terms-header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.terms-header h1{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.terms-header p{
+    color: gray;
+}
+
+.terms-container{
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.terms-card{
+    padding: 25px;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.terms-card:hover{
+    transform: translateY(-3px);
+}
+
+.terms-card h3{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.terms-card p{
+    line-height: 1.6;
+}
+
+:root{
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"]{
+    --card-bg: #1e1e1e;
+}
+
+@media(max-width:768px){
+
+    .terms-header h1{
+        font-size: 28px;
+    }
+
+    .terms-card{
+        padding: 20px;
+    }
+
+}

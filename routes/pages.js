@@ -9,4 +9,6 @@ router.get("/contactus",isLoggedIn,wrapAsync(listingController.renderContactUs))
 
 router.get("/privacypolicy",isLoggedIn,wrapAsync(listingController.renderPrivacyPolicy));
 
+router.get("/termsofservice",isLoggedIn,wrapAsync(listingController.renderTermsOfService));
+
 module.exports = router;
