@@ -49,7 +49,7 @@ body{
     color: white;
     border: none;
     padding: 12px 25px;
-    border-radius: 10px;
+    border-radius: 30px;
     font-weight: 600;
 }
 
@@ -79,4 +79,106 @@ body{
     display:flex;
     justify-content:center;
     align-items: center;
+}
+
+/* dark theme */
+/* FORM PAGE BACKGROUND */
+
+.theme-dark .add-listing-page {
+    background-color: #121212;
+}
+
+/* FORM CARD */
+
+.theme-dark .form-container {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.theme-dark .form-title {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.theme-dark .form-subtitle {
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+.theme-dark .form-control {
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+/* Placeholder */
+
+.theme-dark .form-control::placeholder {
+    color: #888;
+}
+
+/* Focus effect (VERY IMPORTANT) */
+
+.theme-dark .form-control:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+.theme-dark .form-label {
+    color: #e0e0e0;
+    margin-bottom: 5px;
+}
+
+.theme-dark input[type="file"] {
+    background-color: #242424;
+    color: #b0b0b0;
+    border: 1px solid #3a3a3a;
+}
+
+.theme-dark .form-check-label {
+    color: #e0e0e0;
+}
+
+.theme-dark .form-check-input {
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+}
+
+.theme-dark .form-check-input:checked {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.theme-dark select.form-control {
+    background-color: #242424;
+    color: #ffffff;
+    border: 1px solid #3a3a3a;
+}
+
+.theme-dark .add-btn {
+    background-color: #ffffff;
+    color: #121212;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+
+.theme-dark .add-btn:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-2px);
+}
+
+.theme-dark .valid-feedback {
+    color: #4caf50;
+}
+
+.theme-dark .invalid-feedback {
+    color: #ff6b6b;
 }

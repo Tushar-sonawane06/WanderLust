@@ -1,13 +1,13 @@
 /* contact us page */
 .contact-page{
     min-height: 100vh;
-    margin-top:100px;
+    padding-top:120px;
+    padding-bottom:30px;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 15px;
 }
 
 .contact-container{
@@ -62,7 +62,7 @@
     width: 100%;
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     background-color: #ff385c;
     color: white;
     font-weight: 600;
@@ -85,7 +85,9 @@
 /* privacy policy page */
 
 .privacy-page{
-    padding: 50px 15px;
+    /* padding: 50px 15px; */
+    padding-top:120px;
+    padding-bottom:50px;
 }
 
 .privacy-header{
@@ -153,7 +155,8 @@
 /* Terms of service PAGE */
 
 .terms-page{
-    padding: 50px 15px;
+    /* padding: 50px 15px; */
+    padding-top:120px;
 }
 
 .terms-header{
@@ -217,4 +220,122 @@
         padding: 20px;
     }
 
+}
+
+.theme-dark .privacy-page,
+.theme-dark .terms-page {
+    background-color: #121212;
+    min-height: 100vh;
+    padding-top:120px;
+}
+
+.theme-dark .privacy-header h1,
+.theme-dark .terms-header h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+.theme-dark .privacy-header p,
+.theme-dark .terms-header p {
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.theme-dark .privacy-container,
+.theme-dark .terms-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.theme-dark .policy-card,
+.theme-dark .terms-card {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.theme-dark .policy-card:hover,
+.theme-dark .terms-card:hover {
+    background-color: #242424;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.theme-dark .policy-card:hover,
+.theme-dark .terms-card:hover {
+    background-color: #242424;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.theme-dark .policy-card h3,
+.theme-dark .terms-card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.theme-dark .policy-card p,
+.theme-dark .terms-card p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* theme dark contact us form */
+.theme-dark .contact-page {
+    background-color: #121212;
+    padding-top:120px;
+}
+
+.theme-dark .contact-container {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    opacity:0.96;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.theme-dark .contact-title {
+    color: #ffffff;
+    text-align: center;
+}
+
+.theme-dark .contact-subtitle {
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.theme-dark .contact-container input,
+.theme-dark .contact-container textarea,
+.theme-dark .contact-container select {
+    width: 100%;
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.theme-dark .contact-btn {
+    background-color: #ffffff;
+    color: #121212;
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.theme-dark .contact-btn:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-2px);
+}
+
+.theme-dark .form-group label{
+    color: #b0b0b0;
 }

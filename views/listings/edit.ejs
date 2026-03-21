@@ -1,8 +1,9 @@
 <% layout("/layouts/boilerplate.ejs") %>
+<div class="edit-page">
 <div class="edit-container">
     <div> 
 
-    <h3>Edit Your Listing</h3>
+    <h3 class="text-center">Edit Your Listing</h3>
     <form method="POST" action="/listings/<%=  listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
         <div class="listing-gallery container-fluid">
 
@@ -69,12 +70,15 @@
         </div>
         <div class="mb-3">
             <label for="location" class="form-label">Location</label><br>
-            <input name="listing[location]" value="<%= listing.location %>" type="text" required>
+            <input name="listing[location]" class="form-control" value="<%= listing.location %>" type="text" required>
             <div class="invalid-feedback">Please Enter Location!</div>
         </div>
         <br/><br/>
-        <button class="btn mt-3 btn-dark edit-btn">Edit</button>
+        <div class="d-flex justify-content-center">
+            <button class="btn mt-3 btn-dark edit-btn">Edit</button>
+        </div>
     </form>
     </div> 
+</div>
 </div>
 <script src="/js/script.js"></script>

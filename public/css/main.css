@@ -303,3 +303,88 @@ body{
     text-decoration:none;
     color:black;
 }
+
+#main-content{
+    padding-bottom:30px;
+}
+
+/* dark theme */
+
+.theme-dark body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.theme-dark .hero-text h1 {
+    color: #ffffff;
+}
+
+.theme-dark .hero-text p {
+    color: #b0b0b0;
+}
+
+.theme-dark .explore-btn {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.theme-dark .explore-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.theme-dark .hero-images img {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    border-radius: 12px;
+}
+
+.theme-dark #main-content {
+    background-color: #121212;
+}
+
+.theme-dark .hotel-heading h4 {
+    color: #ffffff;
+}
+
+.theme-dark .hotel-content {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.theme-dark .hotel-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.theme-dark .hotel-img img {
+    filter: brightness(0.9);
+}
+
+.theme-dark .hotel-description h6 {
+    color: #ffffff;
+}
+
+.theme-dark .hotel-description p {
+    color: #b0b0b0;
+}
+
+.theme-dark .hotel-description span {
+    color: #888;
+}
+
+.theme-dark .see-all-card {
+    background-color: #1c1c1c;
+    border: 1px dashed #2a2a2a;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.theme-dark .see-all-card:hover {
+    background-color: #242424;
+}
+
+.theme-dark .stack-img {
+    filter: brightness(0.85);
+}

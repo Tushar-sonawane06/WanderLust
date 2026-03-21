@@ -1,5 +1,5 @@
-.gap{
-    margin-top:120px;
+.cover{
+    padding-top:120px;
 }
 
 .listing-gallery{
@@ -71,7 +71,7 @@
 .hotel-description1{
     max-width:700px;
     line-height:1.6;
-    margin-left:115px;
+    margin-left:60px;
 }
 
 .owner-card{
@@ -275,3 +275,164 @@
     background:#e03150;
     }
 
+/* ========================= */
+/* DARK MODE - SHOW PAGE */
+/* ========================= */
+
+/* Background */
+
+.theme-dark body{
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Images (slight blend) */
+
+.theme-dark .main-image img,
+.theme-dark .thumbnail{
+    filter: brightness(0.9);
+}
+
+/* Owner Card */
+
+.theme-dark .owner-card{
+    background: #1c1c1c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Owner text */
+
+.theme-dark .hosted-by{
+    color: #b0b0b0;
+}
+
+/* Hotel Info */
+
+.theme-dark .hotel-title{
+    color: #ffffff;
+}
+
+.theme-dark .hotel-location{
+    color: #b0b0b0;
+}
+
+.theme-dark .hotel-description1{
+    color: #d0d0d0;
+}
+
+/* Amenities section */
+
+.theme-dark .amenities-section{
+    border-top: 1px solid #2a2a2a;
+}
+
+.theme-dark .amenities-title{
+    color: #ffffff;
+}
+
+.theme-dark .amenity-item{
+    color: #e0e0e0;
+}
+
+/* Icons stay brand-colored */
+
+.theme-dark .amenity-item i{
+    color: #ff385c;
+}
+
+/* Cards (reviews) */
+
+.theme-dark .review-card,
+.theme-dark .card{
+    background: #1c1c1c;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* Review text */
+
+.theme-dark .review-heading{
+    color: #ffffff;
+}
+
+.theme-dark .card-text{
+    color: #d0d0d0;
+}
+
+/* Avatar */
+
+.theme-dark .review-avatar{
+    background: #ff385c;
+    color: #ffffff;
+}
+
+/* Buttons */
+
+.theme-dark .btn-outline-dark{
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.theme-dark .btn-outline-dark:hover{
+    background-color: #ffffff;
+    color: #121212;
+}
+
+/* Booking Card */
+
+.theme-dark .booking-card{
+    background: #1c1c1c;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.theme-dark .booking-price{
+    color: #ffffff;
+}
+
+.theme-dark .booking-price span{
+    color: #b0b0b0;
+}
+
+/* Inputs inside booking */
+
+.theme-dark .booking-card .form-control{
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+}
+
+/* Buttons */
+
+.theme-dark .booking-btn{
+    background: #ff385c;
+    color: #ffffff;
+}
+
+.theme-dark .booking-btn:hover{
+    background: #e03150;
+}
+
+/* Review form textarea */
+
+.theme-dark textarea.form-control{
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: #ffffff;
+}
+
+/* Map */
+
+.theme-dark #map{
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.theme-dark .cover{
+    background-color:#121212;
+}
+
+.theme-dark .owner-info h6,
+.theme-dark .booking-field label,
+.theme-dark .review-card h4,
+.theme-dark .map h3,
+.theme-dark .mute{
+    color:white;  
+}

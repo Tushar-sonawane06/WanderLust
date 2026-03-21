@@ -44,3 +44,8 @@
 .password-toggle:hover{
     color:#ff385c;
 }
+
+.theme-dark .sign-up,
+.theme-dark .login {
+    color:white;
+}
