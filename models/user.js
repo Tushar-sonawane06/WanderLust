@@ -7,6 +7,8 @@ const userSchema = new Schema({
         type:String,
         required:true,
     },
+    googleId: String,
+    profileImage: String
 });
 
 userSchema.plugin(passportLocalMongoose);

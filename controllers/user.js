@@ -4,22 +4,42 @@ module.exports.renderSignupForm = (req,res)=>{
     res.render("users/signup.ejs");
 };
 
-module.exports.signup = async (req,res,next)=>{
-    try{
-        let {username, email, password} = req.body;
-        const newUser = new User({email,username});
-        const registeredUser = await User.register(newUser,password);
-        console.log(registeredUser);
-        req.login(registeredUser,(err)=>{
-            if(err){
-                return next(err);
-            };
-            req.flash("success", "Welcome to WanderLust !");
+module.exports.signup = async (req, res, next) => {
+    try {
+        let { username, email, password } = req.body;
+
+        const existingUser = await User.findOne({ username });
+
+        if (existingUser) {
+            req.flash("error", "Username already exists!");
+            return res.redirect("/signup");
+        }
+
+        const newUser = new User({ email, username });
+        const registeredUser = await User.register(newUser, password);
+
+        req.login(registeredUser, (err) => {
+            if (err) return next(err);
+
+            req.flash("success", "Welcome to WanderLust!");
             res.redirect("/listings");
-        })
-    }catch(err){
-        req.flash("error", err.message);
-        res.redirect("/signup");
+        });
+
+    } catch (err) {
+
+            if (err.name === "UserExistsError") {
+                req.flash("error", "Username already exists!");
+                return res.redirect("/signup");
+            }
+        
+            if (err.code === 11000) {
+                req.flash("error", "Username already exists!");
+                return res.redirect("/signup");
+            }
+        
+            req.flash("error", err.message);
+            res.redirect("/signup");
+        
     }
 };
 

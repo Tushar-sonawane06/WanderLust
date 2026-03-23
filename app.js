@@ -14,12 +14,14 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const user = require("./models/user.js");
+const passportConfig = require("./config/passport.js");
 
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const mainRouter = require("./routes/main.js");
 const pagesRouter = require("./routes/pages.js");
+const authRoutes = require("./routes/auth");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -83,6 +85,7 @@ app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
 app.use("/", mainRouter);
 app.use("/", pagesRouter);
+app.use("/auth", authRoutes);
 
 // middleware
 app.use((req, res, next) => {

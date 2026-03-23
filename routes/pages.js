@@ -7,8 +7,8 @@ const listingController = require("../controllers/pages.js");
 
 router.get("/contactus",isLoggedIn,wrapAsync(listingController.renderContactUs));
 
-router.get("/privacypolicy",isLoggedIn,wrapAsync(listingController.renderPrivacyPolicy));
+router.get("/privacypolicy",wrapAsync(listingController.renderPrivacyPolicy));
 
-router.get("/termsofservice",isLoggedIn,wrapAsync(listingController.renderTermsOfService));
+router.get("/termsofservice",wrapAsync(listingController.renderTermsOfService));
 
 module.exports = router;
