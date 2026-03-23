@@ -388,3 +388,13 @@ body{
 .theme-dark .stack-img {
     filter: brightness(0.85);
 }
+
+.card-title,
+.card-location,
+.price{
+    padding-left:9px;
+}
+
+.price{
+    padding-bottom:10px;
+}
