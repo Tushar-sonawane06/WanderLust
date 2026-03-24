@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
-
+app.set("trust proxy", 1);
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -56,8 +56,9 @@ const sessionOptions= {
     }),
     secret: "mysupersecretcode",
     resave:false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie:{
+        secure:true,
         expires:Date.now() + 7*24*60*60*1000,   
         maxAge: 7*24*60*60*1000,
         httpOnly:true,
