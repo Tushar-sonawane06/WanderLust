@@ -14,7 +14,10 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: "/login",
     successRedirect: "/listings", 
-  })
+  }),
+  (req, res) => {
+    res.redirect("/listings"); // or home page
+  }
 );
 
 module.exports = router;
