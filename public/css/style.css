@@ -391,3 +391,37 @@ input:checked + .filter-slider:before{
     margin-top: 120px;
     margin-bottom: -90px !important;
 }
+
+@media (max-width: 576px) {
+
+    #filters-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      margin: 0;
+      padding: 100px 10px 10px;
+    }
+  
+    #filters {
+      width: 100%;
+      gap: 20px;
+      padding: 10px 5px;
+    }
+  
+    .filter {
+      min-width: 60px;
+      font-size: 0.75rem;
+    }
+  
+    .filter i {
+      font-size: 1rem;
+    }
+  
+    .tax-toggle {
+      width: 100%;
+      justify-content: center;
+      margin: 10px 0 0 0;
+      padding: 8px 12px;
+    }
+  
+  }

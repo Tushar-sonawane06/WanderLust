@@ -339,3 +339,68 @@
 .theme-dark .form-group label{
     color: #b0b0b0;
 }
+
+    @media (max-width: 576px) {
+
+        .privacy-page {
+          padding: 100px 15px 40px;
+        }
+      
+        .privacy-header h1 {
+          font-size: 24px;
+        }
+      
+        .privacy-header p {
+          font-size: 14px;
+        }
+      
+        .privacy-container {
+          max-width: 100%;
+          gap: 15px;
+        }
+      
+        .policy-card {
+          padding: 18px;
+          border-radius: 10px;
+        }
+      
+        .policy-card h3 {
+          font-size: 16px;
+        }
+      
+        .policy-card p {
+          font-size: 14px;
+        }
+        
+            .terms-page {
+              padding: 100px 15px 40px;
+            }
+          
+            .terms-header h1 {
+              font-size: 24px;
+            }
+          
+            .terms-header p {
+              font-size: 14px;
+            }
+          
+            .terms-container {
+              max-width: 100%;
+              gap: 15px;
+            }
+          
+            .terms-card {
+              padding: 18px;
+              border-radius: 10px;
+            }
+          
+            .terms-card h3 {
+              font-size: 16px;
+            }
+          
+            .terms-card p {
+              font-size: 14px;
+            }
+          
+          }
+
