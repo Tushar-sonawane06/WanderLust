@@ -121,13 +121,13 @@
         
                     <div class="owner-info">
                         <p class="hosted-by">Hosted by</p>
-                        <h6>Chinmay</h6>  <!-- listing.owner.username -->
+                        <h6><%= listing.owner.username %></h6>
                     </div>
         
                 </div>
             </div>
             </div>
-                <!-- if(currentUser && listing.owner._id.equals(currentUser._id)){ -->
+                <%= if(currentUser && listing.owner._id.equals(currentUser._id)){ %>
         
                 <div class="owner-actions d-flex justify-content-center">
         
@@ -143,7 +143,7 @@
         
                 </div>
         
-                <!-- }  -->
+                <%= } %>
                 
         </div>
 
