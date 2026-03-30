@@ -22,6 +22,7 @@ const userRouter = require("./routes/user.js");
 const mainRouter = require("./routes/main.js");
 const pagesRouter = require("./routes/pages.js");
 const authRoutes = require("./routes/auth");
+const bookingRoutes = require("./routes/booking");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -87,6 +88,7 @@ app.use("/", userRouter);
 app.use("/", mainRouter);
 app.use("/", pagesRouter);
 app.use("/auth", authRoutes);
+app.use("/bookings", bookingRoutes);
 
 // middleware
 app.use((req, res, next) => {
