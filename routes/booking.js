@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { isLoggedIn } = require("../middleware.js");
 const wrapAsync = require("../utils/wrapasync.js");
-const listingController = require("../controllers/main.js");
+const listingController = require("../controllers/booking.js");
 
 router.get("/:id", isLoggedIn, wrapAsync (listingController.bookHotel));
 

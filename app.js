@@ -22,7 +22,7 @@ const userRouter = require("./routes/user.js");
 const mainRouter = require("./routes/main.js");
 const pagesRouter = require("./routes/pages.js");
 const authRoutes = require("./routes/auth");
-const bookingRoutes = require("./routes/booking");
+const bookingRoutes = require("./routes/booking.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
