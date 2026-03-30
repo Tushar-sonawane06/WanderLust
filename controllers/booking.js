@@ -1,6 +1,7 @@
 const express = require("express");
 const Listing = require("../models/listing.js");
 const Booking = require("../models/booking.js");
+const Listing = require("../models/listing");
 
 module.exports.bookHotel= async (req, res) => {
     const listing = await Listing.findById(req.params.id);
