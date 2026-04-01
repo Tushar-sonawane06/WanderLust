@@ -32,7 +32,7 @@ module.exports.createBooking = async (req, res) => {
 
     await newBooking.save();
 
-    res.redirect(`/mybookings`);
+    res.redirect(`/my/bookings`);
   } catch (err) {
     console.log(err);
     res.send("Booking Failed");
