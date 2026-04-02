@@ -73,6 +73,7 @@
 
 .listing-card{
     border:none !important;
+    padding-top:5px;
     margin-bottom: 2rem;
 }
 

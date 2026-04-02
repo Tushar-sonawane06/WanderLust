@@ -24,7 +24,7 @@
     max-width: 420px;
     padding: 2rem;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 249, 249, 0.9);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
@@ -110,4 +110,20 @@
     color: #333;
     font-weight: bold;
     transition: 0.3s;
+  }
+
+  .booked-page{
+    padding-top:120px;
+  }
+
+  .theme-dark .booked-page{
+    background-color: black;
+  }
+
+  .booked-hotel-image{
+    padding:0;
+  }
+
+  .theme-dark .booking-status{
+    color: #f1f1f1;
   }
