@@ -23,7 +23,7 @@
 }
 
 .thumbnail{
-    width:100%;
+    width:23.6%;
     height:150px;
     object-fit:cover;
     border-radius:10px;
@@ -482,7 +482,7 @@
     }
   
     .owner-card {
-      width: 30%;
+      width: 45%;
       justify-content: center;
     }
   

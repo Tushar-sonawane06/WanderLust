@@ -389,7 +389,7 @@ input:checked + .filter-slider:before{
 }
 
 .flash{
-    margin-top: 120px;
+    margin-top: 120px !important;
     margin-bottom: -90px !important;
 }
 
