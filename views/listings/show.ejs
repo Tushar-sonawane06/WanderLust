@@ -150,25 +150,13 @@
         <div class="booking">
             <div class="booking-card">
 
-                <h4 class="booking-price">
+                <h3 class="text-center">Book The Hotel !</h3>
+
+                <h4 class="booking-price text-center">
                     ₹ <%= Math.round(listing.price * 1.18).toLocaleString("en-IN") %>
                     <span>/ night</span>
                     <span class="mute">(incl. 18% GST)</span>
                 </h4>
-
-                <div class="booking-inputs">
-
-                    <div class="booking-field">
-                        <label>Check-in</label>
-                        <input type="date" class="form-control">
-                    </div>
-
-                    <div class="booking-field">
-                        <label>Check-out</label>
-                        <input type="date" class="form-control">
-                    </div>
-
-                </div>
 
                 <a href="/bookings/new/<%= listing._id %>" >
                     <button class="btn booking-btn">
