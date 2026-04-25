@@ -13,19 +13,17 @@ const bookingSchema = new mongoose.Schema({
   checkOut: Date,
   guests: Number,
   totalPrice: Number,
+  paymentId: String,
+  orderId: String,
   status: {
     type: String,
+    enum: ["confirmed", "cancelled"],
     default: "confirmed",
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
-  status: {
-    type: String,
-    enum: ["confirmed", "cancelled"],
-    default: "confirmed",
-  }
 });
 
 module.exports = mongoose.model("Booking", bookingSchema);

@@ -23,6 +23,7 @@ const mainRouter = require("./routes/main.js");
 const pagesRouter = require("./routes/pages.js");
 const authRoutes = require("./routes/auth");
 const bookingRoutes = require("./routes/booking.js");
+const paymentRoutes = require("./routes/payment");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -31,6 +32,7 @@ app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 app.set("trust proxy", 1);
+app.use(express.json());
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -59,7 +61,7 @@ const sessionOptions= {
     resave:false,
     saveUninitialized: false,
     cookie:{
-        secure:true,
+        secure:false,
         expires:Date.now() + 7*24*60*60*1000,   
         maxAge: 7*24*60*60*1000,
         httpOnly:true,
@@ -89,6 +91,7 @@ app.use("/", mainRouter);
 app.use("/", pagesRouter);
 app.use("/auth", authRoutes);
 app.use("/bookings", bookingRoutes);
+app.use("/payment", paymentRoutes);
 
 // middleware
 app.use((req, res, next) => {
