@@ -193,11 +193,12 @@ body{
 
 
 .hotel-content{
-    height:235px;
-    width:203px;
+    height:100%;
+    width: 100%;
     border-radius: 15px;
     position:relative;
     z-index:5;
+    background: rgb(243, 243, 243);
 }
 
 .hotel-list{
@@ -208,7 +209,7 @@ body{
 }
 
 .hotel-img img{
-    height:188px;
+    height:200px;
     width:100%;
     border-radius: 15px;
     object-fit:cover;

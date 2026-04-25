@@ -3,7 +3,7 @@ const Listing = require("../models/listing");
 require("dotenv").config()
 
 module.exports.mainPage = async (req,res)=>{
-    const cities = ["Pune", "Mumbai", "Delhi", "Bengaluru", "chennai"];
+    const cities = ["Mumbai", "Delhi", "Bengaluru", "chennai","Pune"];
 
     let listingsByCity = {};
   
