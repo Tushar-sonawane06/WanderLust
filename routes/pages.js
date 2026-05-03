@@ -11,4 +11,6 @@ router.get("/privacypolicy",wrapAsync(listingController.renderPrivacyPolicy));
 
 router.get("/termsofservice",wrapAsync(listingController.renderTermsOfService));
 
+router.post("/contact",wrapAsync(listingController.redirectCotactForm));
+
 module.exports = router;
