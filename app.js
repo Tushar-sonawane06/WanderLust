@@ -102,5 +102,3 @@ app.use((err,req,res,next)=>{
     let {statuscode=500, message="Something Went Wrong"} = err;
     return res.status(statuscode).send(message);
 });
-
-app.use((err, req, res, next) => {
