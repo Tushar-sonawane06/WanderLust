@@ -33,12 +33,11 @@ module.exports.index = async (req,res)=>{
     let totalPages = Math.ceil(totalListings / limit);
 
     res.render("./listings/index.ejs", {
-        // listings,
-        // page,
-        // totalPages,
-        // hotelType,
-        // search
-        console.log("hello");
+        listings,
+        page,
+        totalPages,
+        hotelType,
+        search
     });
 };
 
